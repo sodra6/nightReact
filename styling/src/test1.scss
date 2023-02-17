@@ -1,0 +1,11 @@
+//변수선언
+$mainColor : green;
+$subColor : pink;
+
+h1{
+    color : $mainColor;
+}
+
+.title02{
+    color : $subColor;
+}
