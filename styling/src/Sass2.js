@@ -4,11 +4,11 @@ import Button from './Button';
 function Sass2(props) {
     return (
         <div>
-            <Button bgcolor="navy"/>
+            <Button bgcolor="navy" size="large"/>
             <hr />
-            <Button bgcolor="red"/>
+            <Button bgcolor="red" size="medium"/>
             <hr />
-            <Button bgcolor="green"/>
+            <Button bgcolor="green" size="small"/>
         </div>
     );
 }
