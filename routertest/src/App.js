@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Router } from "react-router-dom";
+import About from "./About";
+import Home from "./Home";
+//React(SPA) - 싱글페이지 어플리케이션
+//기본적으로는 페이지 이동이 안되는 프로그램
+//페이지 이동기술을 도와주는 라이브러리 : react-router
+//yarn add react-router-dom
 
-function App() {
+//<Route path="" component={}>
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router path="/" exact={true} component={Home} />
+      <Router path="/about" component={About} />
     </div>
   );
 }
