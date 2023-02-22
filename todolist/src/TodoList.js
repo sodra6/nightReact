@@ -1,11 +1,16 @@
 import React from "react";
-import TodoItem from "./TodoItem";
 import "./todolist.css";
-//리스트를 묶어서 한번에 처리 - map
+import TodoItem from "./TodoItem";
+import { useTodoState } from "./TodoContext";
+
+//리스트를 묶어서 한번에 처리 - map()
 function TodoList() {
+  const todoes = useTodoState();
   return (
     <div className="todolistbox">
-      <TodoItem />
+      {todoes.map((todo) => (
+        <TodoItem key={todo.id} id={todo.id} text={todo.text} chk={todo.chk} />
+      ))}
     </div>
   );
 }

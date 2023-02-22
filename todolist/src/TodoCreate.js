@@ -1,8 +1,17 @@
-import React from "react";
-import { MdAdd } from "react-icons/md";
+import React, { useState } from "react";
 import "./todocreate.css";
+import { MdAdd } from "react-icons/md";
+import { useTodoDispatch, useTodoNextId } from "./TodoContext";
 
-function TodoCreate(props) {
+//새로운 할일을 등록하는 컴포넌트
+function TodoCreate() {
+  //input에 적히는 value값
+  const [value, setValue] = useState("");
+  //입력 form의 visible 여부
+  const [oepn, setOpen] = useState(false);
+
+  const dispatch = useTodoDispatch();
+  const nextId = useTodoNextId();
   return (
     <>
       <div className="formWrap">

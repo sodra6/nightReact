@@ -16,22 +16,6 @@
   margin-right: 20px;
   cursor: pointer;
 }
-
-.checkcircle > * {
-  display: none;
-} /* 체크모양 안보이게 처리 */
-.checkcircle.active {
-  border-color: #38d9a9;
-}
-.checkcircle.active > * {
-  display: block;
-  color: #38d9a9;
-} /* 활성화 시 체크모양 보이게 처리 */
-.checkcircle.active + p {
-  color: #dee2e6;
-  text-decoration: line-through;
-}
-
 .todoitembox p {
   flex: 1;
   font-size: 21px;
@@ -46,10 +30,4 @@
   cursor: pointer;
 
   display: none; /* 안보이게 처리 */
-}
-.remove:hover {
-  color: #ff6b6b;
-}
-.todoitembox:hover .remove {
-  display: block;
 }

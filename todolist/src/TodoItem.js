@@ -1,18 +1,25 @@
 import React from "react";
 import "./todoitem.css";
-//react-icons 라이브러리 중 아이콘 2개 불러옴
 import { MdDone, MdDelete } from "react-icons/md";
-
+import { useTodoDispatch } from "./TodoContext";
+//react-icons 라이브러리 중 아이콘 2개 불러옴
 //각각 할일 정보를 표시
-//체크박스 + 할일 + hover
-function TodoItem(props) {
+//체크박스 + 할일텍스트 + 마우스오버시 휴지통아이콘
+function TodoItem({ id, text, chk }) {
+  const dispatch = useTodoDispatch();
+  const onToggle = () => dispatch({ type: "TOGGLE", id });
+  const onRemove = () => dispatch({ type: "REMOVE", id });
+
   return (
     <div className="todoitembox">
-      <div className="checkcircle">
+      <div
+        className={chk ? "checkcircle active" : "checkcircle"}
+        onClick={onToggle}
+      >
         <MdDone />
       </div>
-      <p>할일 구현</p>
-      <div className="remove">
+      <p>{text}</p>
+      <div className="remove" onClick={onRemove}>
         <MdDelete />
       </div>
     </div>

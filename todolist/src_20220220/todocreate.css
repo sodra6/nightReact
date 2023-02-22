@@ -19,16 +19,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.125s all ease-in;
+}
 
-  transition: 0.125s all ease-in; /* X자로 회전시 자연스럽게 처리 */
-}
 .circleBox:hover {
-  background: #63e6be;
+  background-color: #63e6be;
 }
-.formWrap.active + .circleBox {
-  /* 회전되서 빨간색X */
-  background: #fa5252;
-  transform: translate(-50%, 50%) rotate(45deg); /* 회전처리 */
+
+.circleBox:active {
+  background-color: #fa5252;
+  transform: translate(-50%, 50%) rotate(45deg);
 }
 
 .formWrap {
@@ -36,8 +36,6 @@
   bottom: 0;
   left: 0;
   position: absolute;
-  transition: 0.3s;
-  opacity: 0; /* 처음엔 안보이게 처리 */
 }
 .formWrap form {
   background: #f8f9fa;
@@ -58,8 +56,4 @@
   outline: none;
   font-size: 18px;
   box-sizing: border-box;
-}
-.formWrap.active {
-  opacity: 1;
-  transform: ;
 }
