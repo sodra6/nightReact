@@ -7,7 +7,7 @@ import Bts from "./bts.json";
 //1. yarn : yarn global add json-server
 //2. npm : npm install -g json-server
 
-//가상데이터로 만들고싶은 json파일을 루터폴더에 저장(src볼다 밖에 저장)
+//가상데이터로 만들고싶은 json파일을 루터폴더에 저장(src 폴더 밖에 저장)
 
 function App(props) {
   return <div></div>;

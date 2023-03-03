@@ -11,19 +11,13 @@ import Father from "./Father";
  *
  * ()() : jsx 영역에 함수 실행시 즉시실행함수 사용
  */
-export const gName = createContext();
-
 function App(props) {
   //자바스크립트 영역
-  const name = useState("조용규");
-
   return (
     <>
-      <gName.Provider value={name}>
-        {/* JSX 영역 */}
-        <h1>Top area</h1>
-        <Father />
-      </gName.Provider>
+      {/* JSX 영역 */}
+      <h1>Top area</h1>
+      <Father />
     </>
   );
 }
