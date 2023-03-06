@@ -19,7 +19,7 @@ function CounterContainer() {
   //Counter 컴포넌트에 Props로 내려주기 위해 dispatch하는 함수를 생성
   const onIncrease = () => dispatch(increase());
   const onDecrease = () => dispatch(decrease());
-  const onSetDiff = () => dispatch(setDiff(diff));
+  const onSetDiff = (diff) => dispatch(setDiff(diff));
 
   return (
     <div>
