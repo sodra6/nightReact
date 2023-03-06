@@ -47,7 +47,6 @@ function Map(props) {
   //useEffect를 통해서 주소정보 확인
   useEffect(() => {
     console.log(location);
-    console.log(test);
   }, [location]);
 
   //useSearchParam Hooks, get(), set() 으로 구분
