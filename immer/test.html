@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //JS에서 객체 데이터 변경
+      const obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 4,
+      };
+      obj["a"] = 10;
+      console.log(obj.a);
+      //react에서 객체데이터 변경 : 스프레드 연산자(...) 사용
+      const obj2 = {
+        y: 1,
+        x: 2,
+        z: 3,
+      };
+      const newObj = {
+        ...obj2,
+        z: 5,
+      };
+      console.log(newObj);
+
+      //리액트에서 객체나 배열을 업데이트할때는 직접수정하면 안되고, 불변성을 지켜야한다
+      //불변성 : 상태값이 변경되지 않게 지켜주는것
+      //불변성이 지켜지지않으면 값이 새롭게 바뀌어도 감지를 못함
+      //React.memo()에서 서로 비교하면서 최적화를 하려면 이전값과 새로운 값이 존재해야 감지를 한다.
+
+      //JS에서 배열데이터 업데이트
+      const fruit = ["apple", "paer", "peach"];
+      fruit[1] = "grapes";
+      fruit.push("pineapple");
+      console.log(fruit);
+
+      //react에서 배열 업데이트
+      const fruit2 = ["apple", "paer", "peach"];
+      const chgFruit = fruit2.map((fruit, index) => {
+        if (index == 1) return "grapes";
+        else return fruit;
+      });
+      console.log(fruit2);
+      console.log(chgFruit);
+      const newFruits = fruit2.concat("pineapple");
+
+      //베열도 push(), splice()등 변수 값 자체가 바뀌는 메서드 사용 x
+      //concat(), filter(), map() 등 새로운 배열 값으로 반환되는것만 사용
+    </script>
+  </body>
+</html>

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 //이렇게 여러개의 컴포넌트를 만드는 건 리렌더링 성능을 최적화 하기 위함
 
 const TodoItem = React.memo(function TodoItem({ todo, onToggle }) {
+  console.log(todo);
   return (
     <li
       onClick={() => onToggle(todo.id)}
@@ -18,6 +19,7 @@ const TodoItem = React.memo(function TodoItem({ todo, onToggle }) {
 });
 
 const TodoList = React.memo(function TodoList({ todoes, onToggle }) {
+  console.log(todoes);
   return (
     <ul>
       {todoes.map((todo) => (
@@ -36,8 +38,8 @@ function Todoes({ todoes, onCreate, onToggle }) {
     setInput(e.target.value);
   };
   const onSubmit = (e) => {
-    e.preventDefault();
     onCreate(input); //새롭게 데이터를 store에 추가
+    e.preventDefault();
     setInput("");
   };
   return (

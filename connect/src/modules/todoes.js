@@ -25,11 +25,11 @@ const initialState = [
   //reducer의 초기상태는 꼭 객체타입일 필요는 없음
   //배열, 문자열, 숫자, 논리형 모두 상관없음
   /*
-  {
-    id: 1,
-    text: "할일텍스트",
-    check: false,
-  },
+    {
+      id: 1,
+      text: "할일텍스트",
+      check: false,
+    },
    */
 ];
 
@@ -37,6 +37,7 @@ const initialState = [
 export default function todoes(state = initialState, action) {
   switch (action.type) {
     case "ADD_TODO":
+      console.log(state);
       return state.concat(action.todo);
     case "TOGGLE_TODO":
       return state.map((todo) =>
