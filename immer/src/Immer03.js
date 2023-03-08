@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import produce from "immer";
 function Immer03() {
   function reducer(state, action) {
@@ -14,6 +14,27 @@ function Immer03() {
         return state;
     }
   }
+  //no immer
+  const [todo, setTodo] = useState({
+    text: "example",
+    check: false,
+  });
+  const onClick = useCallback(() => {
+    setTodo((toeo) => ({
+      ...todo,
+      check: !todo.check,
+    }));
+  });
+
+  //onClick을 immer로 대체
+  const onClick2 = useCallback(() => {
+    setTodo(
+      produce((draft) => {
+        draft.check = !draft.check;
+      })
+    );
+  }, []);
+
   return (
     <div>
       <></>
