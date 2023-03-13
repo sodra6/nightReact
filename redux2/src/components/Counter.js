@@ -3,10 +3,10 @@ import React from "react";
 //프레젠테이셔널 컴포넌트(보여지는 컴포넌트) : Store에 직접적으로 접근하지 않고 Props로 내려받아 처리, 보통 UI로 태그요소들을 표시하려고 작성
 
 function Counter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
-  const onChange = (e) => {
+  const onChange = e => {
     onSetDiff(parseInt(e.target.value));
   };
-
+  console.log(diff);
   return (
     <div>
       <h1>{number}</h1>

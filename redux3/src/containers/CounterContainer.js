@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< Updated upstream
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
+=======
+import { useSelector, useDispatch } from "react-redux";
+>>>>>>> Stashed changes
 import Counter from "../components/Counter";
 import { increase, decrease, setDiff } from "../modules/counter"; //액션함수 불러옴
 
@@ -9,6 +13,7 @@ import { increase, decrease, setDiff } from "../modules/counter"; //액션함수
 
 function CounterContainer() {
   /* useSelector : 리덕스의 스토어 데이터 조회하는 Hook - store.getState()와 결과는 동일 */
+<<<<<<< Updated upstream
   /* useSelector : store의 상태값(state)를 반환해주는 역할, store값이 바뀌면 컴포넌트를 리렌더링 처리 */
   //useSelector(state선택, equalityFn)
   //equalityFn : 이전값과 다음값을 비교하여 true가 나오면 리렌더링을 하지않고 false가 나오면 리렌더링
@@ -48,6 +53,22 @@ function CounterContainer() {
         onDecrease={onDecrease}
         onSetDiff={onSetDiff}
       />
+=======
+  const { number, diff } = useSelector(state => ({
+    number: state.number,
+    diff: state.diff,
+  }));
+  //dispatch함수 만들기
+  const dispatch = useDispatch();
+  //Counter컴포넌트에 Props로 내려주기 위해 dispatch하는 함수를 생성
+  const onIncrease = () => dispatch(increase());
+  const onDecrease = () => dispatch(decrease());
+  const onSetDiff = diff => dispatch(setDiff(diff));
+
+  return (
+    <div>
+      <Counter number={number} diff={diff} onIncrease={onIncrease} onDecrease={onDecrease} onSetDiff={onSetDiff} />
+>>>>>>> Stashed changes
     </div>
   );
 }
