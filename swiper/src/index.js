@@ -4,17 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-/**
-create-react-app thunk1
-
-cd thunk1
-
-yarn add redux
-yarn add react-redux
-yarn add redux-logger
-yarn add redux-thunk
-yarn add redux-devtools-extension
- */
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
