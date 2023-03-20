@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //async/await : ES8에 나온 Promise를 쉽게 작성하게 해주는 키워드
+        //async : 함수가 Promise를 반환하도록 함
+        //await : 함수가 Promise를 기다리게 함
+
+        function testFunction1(){
+            return Promise.resolve('ㅎㅇ');
+        }
+
+        //위,아래 코드는 같음
+        async function testFunction2(){
+            return "hi"
+        }
+
+        //소비코드인 then()은 둘다 작성
+        testFunction1().then(val=>console.log(val));
+        testFunction2().then(val=>console.log(val));
+
+        //await문법
+        //let 변수명 = await 프로미스명;
+        async function testFunction(){
+            let testPromise = new Promise(function(res){
+                setTimeout(function(){
+                    res('출력');
+                },3000)
+            });
+            let output= await testPromise;
+            console.log(output);
+        }
+        testFunction();
+    </script>
+</body>
+</html>

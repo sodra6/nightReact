@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //콜백지옥 : 콜백함수로 비동기 작업을 할 떄 많아지면 발생되는 함수의 중첩형태
+        //숫자가 1초마다 1씩 더해져서 출력-setimeout만 써서 작성
+        function numIncrease(num, callback) {
+            setTimeout(()=>{
+                const numPlus = num+1;
+                console.log(numPlus);
+                if(callback) callback(numPlus);
+            },1000)
+        }
+        numIncrease(0,num=>{
+            numIncrease(num,num=>{
+                numIncrease(num,num=>{
+                    numIncrease(num,num=>{
+                        numIncrease(num,num=>{
+                            console.log('done')
+                        })
+                    })
+                })
+            })
+        });
+    </script>
+</body>
+</html>

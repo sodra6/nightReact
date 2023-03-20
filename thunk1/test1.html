@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="test"></p>
+    <script>
+        //Promise : 생성코드와 소비코드를 연결하는 자바스크립트 객체 
+        //크게 [보류중], [실행], [거부] 이렇게 명령을 줄 수 있다.
+        //[보류중] : 이 작업 중엔 결과가 정의되지 않음
+        //[실행] : 결과는 값
+        //[거부] : 오류 객체로 처리
+        /* 
+            let value = enw Promise((resolve,reject)=>{
+                resolve(); //성공시
+                reject(); //에러시, 생략 가능
+            });
+
+            value.then(
+                function(valeu){//성공시 발생할 코드}
+                function(err){//에러시 발생할 코드}
+            );
+        */
+       //정수를 입력받아 양수면 성공, 음수면 실패
+       const test = document.getElementById('test');
+
+       //출력만을 위한 함수를 선언
+       function output(x){
+            test.innerHTML=x;
+       }
+
+       //양수음수인지 promise로 확인
+       let testPromise = new Promise((res,rej)=>{
+            let num = prompt('숫자를 입력하세요','정수입력');
+
+            if(num>0) res('잘입력');//결과를 값으로 도출
+            else rej('잘못입력');
+       });
+       testPromise.then((val)=>{output(val)},(err)=>{output(err)});
+    </script>
+</body>
+</html>

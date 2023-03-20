@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h3>일반함수 값 : <span id="test1"></span></h3>
+    <h3>setTimeout 값 : <span id="test2"></span></h3>
+    <script>
+        const test1 = document.getElementById('test1')
+        const test2 = document.getElementById('test2')
+        function output01(){
+            test1.innerHTML='일반함수결과'
+        }
+
+        const output2 = new Promise((res,rej)=>{
+            setTimeout(function(){
+                res('setTimeout함수 결과');
+            },5000);
+        });
+
+        /* 동기처리 : 먼저 쓴것 먼저 처리, 나중에 쓴것 나중에 처리 */
+        /* 비동기처리 : 직렬방식이 아니라 병렬 방식으로 먼저쓴것과 상관없이 순서를 처리 */
+        output2.then((val)=>{
+            test2.innerHTML = val;
+        });
+        output01();
+    </script>
+</body>
+</html>
