@@ -1,0 +1,34 @@
+{
+  "main": [
+    {
+      "id": 1,
+      "url": "https://image.tving.com/upload/fe/highlight/2023/0222/20230222171143banner_image_url_u.jpg/dims/resize/F_webp,1920",
+      "explain": "법정에 서게된 평범한 사람들의 이야기",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "url": "https://image.tving.com/upload/fe/highlight/2023/0307/20230307191255banner_image_url_u.jpg/dims/resize/F_webp,1920",
+      "explain": "뭉뜬 4인방의 배낭여행 블록버스터",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "url": "https://image.tving.com/upload/fe/highlight/2023/0206/20230206191512banner_image_url_u.jpg/dims/resize/F_webp,1920",
+      "explain": "박형식x전소니의 청춘 구원 로맨스",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "url": "https://image.tving.com/upload/fe/highlight/2023/0320/20230320192324banner_image_url_u.jpg/dims/resize/F_webp,1920",
+      "explain": "직장인 멘탈 관리 필수템",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "url": "https://image.tving.com/upload/fe/highlight/2023/0317/20230317215535banner_image_url_u.jpg/dims/resize/F_webp,1920",
+      "explain": "지니 TV 티빙 요금제 런칭 기념 이벤트",
+      "link": "#"
+    }
+  ]
+}
