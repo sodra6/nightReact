@@ -1,12 +1,16 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const TvBlock = styled.div`
-  padding: 120px 60px 0;
+    padding: 120px 60px 0;
 `;
 
-function TvPage() {
-  return <TvBlock>TV프로그램</TvBlock>;
+function TvPage(props) {
+    return (
+        <TvBlock>
+            TV프로그램
+        </TvBlock>
+    );
 }
 
 export default TvPage;

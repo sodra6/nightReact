@@ -1,12 +1,16 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const LiveBlock = styled.div`
-  padding: 120px 60px 0;
+    padding: 120px 60px 0;
 `;
 
-function LivePage() {
-  return <LiveBlock>라이브페이지</LiveBlock>;
+function LivePage(props) {
+    return (
+        <LiveBlock>
+            라이브페이지
+        </LiveBlock>
+    );
 }
 
 export default LivePage;
